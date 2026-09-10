@@ -1,46 +1,63 @@
-# AI ERP Smart Search - Streamlit App
+# AI-Based Intelligent Search for ERP Systems
 
-## Folder structure
+An AI-powered intelligent search system designed to improve information retrieval from ERP datasets using Natural Language Processing and semantic search techniques.
 
-Keep the project like this:
+## Project Overview
 
-AI_ERP_Search/
-├── app.py
-├── requirements.txt
-├── dataset/
-│   ├── your ERP CSV files
-│   └── ...
-└── notebook/
-    └── your Jupyter notebook
+Traditional keyword-based search systems depend heavily on exact word matching. This project uses semantic search to understand the meaning of a user's query and retrieve the most relevant ERP information.
 
-## Run
+## Technologies Used
 
-Open Command Prompt in the AI_ERP_Search folder:
+* Python
+* Pandas
+* NumPy
+* Natural Language Processing (NLP)
+* Sentence Transformers
+* all-MiniLM-L6-v2
+* Sentence Embeddings
+* Cosine Similarity
+* FAISS
+* Streamlit
+* Scikit-learn
 
-```bash
-pip install -r requirements.txt
-streamlit run app.py
-```
+## How It Works
 
-The app automatically looks for CSV files inside `dataset/`.
+1. ERP data is loaded and preprocessed.
+2. Text data is cleaned and prepared for searching.
+3. Sentence Transformer `all-MiniLM-L6-v2` converts text into embeddings.
+4. User queries are also converted into embeddings.
+5. Cosine similarity and FAISS are used to find semantically similar results.
+6. The most relevant results are returned to the user.
+7. A Streamlit interface provides an easy way to search the ERP data.
 
-It supports common Olist/ERP file names such as:
-- olist_customers_dataset.csv
-- olist_orders_dataset.csv
-- olist_order_items_dataset.csv
-- olist_products_dataset.csv
-- olist_payments_dataset.csv
+## Key Features
 
-It also searches by keywords, so names such as customers.csv, orders.csv, products.csv, payments.csv and order_items.csv work too.
+* Semantic search instead of only exact keyword matching
+* Fast vector similarity search using FAISS
+* Natural-language query support
+* Sentence embedding generation
+* Relevant Top-K result retrieval
+* Interactive Streamlit interface
 
-## AI model
+## Model
 
-Semantic fallback uses the pretrained Sentence Transformer:
+The project uses the `all-MiniLM-L6-v2` Sentence Transformer model to convert text into numerical vector representations called embeddings.
 
-all-MiniLM-L6-v2
+These embeddings allow the system to compare the meaning of different sentences and queries.
 
-The model is not trained from scratch in the app. It converts text into embeddings and uses cosine similarity for semantic search.
+## Applications
 
-## Product images
+The system can be adapted for searching information in:
 
-If your product table contains an `image_path`, `product_image`, `image`, or `img_path` column and the paths point to existing local files, the app will show product previews automatically.
+* ERP systems
+* Retail databases
+* Inventory systems
+* Product databases
+* Order management systems
+* Customer information systems
+
+## Author
+
+**Salmanul Faris**
+
+GitHub: `salman-209`
